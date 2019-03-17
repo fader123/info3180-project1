@@ -20,14 +20,14 @@
         {% for user in users %}
         <div class="larger">
             <div class="left">
-            <img src="{{ url_for('static', filename = 'uploads/' + user.get_id() +'.jpg') }}">
+              <img src="{{ url_for('static', filename = 'uploads/' + user.get_id() +'.jpg') }}">
             </div>
             <div class="right">
             <br>
             <ul style="list-style: none;">
-            <li>&emsp;&emsp;<h5>{{ user.first_name }} {{ user.last_name}}</h5></li>
-            <li>&emsp;<i class="fa fa-user-o"></i>&emsp;{{ user.gender}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="{{ url_for('user',userid=user['id']) }}"><button id="bttn" type="submit">View Profile</button></a></li>
-            <li>&emsp;<i class="fa fa-map-marker"></i>&emsp;{{ user.location }}</li>
+              <li>&emsp;&emsp;<h5>{{ user.first_name }} {{ user.last_name}}</h5></li>
+              <li>&emsp;<i class="fa fa-user-o"></i>&emsp;{{ user.gender}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="{{ url_for('user',userid=user['id']) }}"><button id="bttn" type="submit">View Profile</button></a></li>
+              <li>&emsp;<i class="fa fa-map-marker"></i>&emsp;{{ user.location }}</li>
             </ul>
             </div>
         </div>
