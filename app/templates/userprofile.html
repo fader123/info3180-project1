@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+<br>
+<center>
+<div class="larger" >
+        <div class="left">
+        <img src="{{url_for('static', filename = 'uploads/'+ user.get_id() + '.jpg' )}}">
+        </div>
+        <div class="right">
+            <ul style="list-style: none;">
+            <li><h2>&emsp;&emsp;&emsp;{{ user.first_name }} {{ user.last_name}}</h2></li>
+            <li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-envelope-o"></i>&emsp;{{ user.email }}</li>
+            <li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-map-marker"></i>&emsp;{{ user.location }}</li>
+            <li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<i class="fa fa-calendar-o"></i>&emsp;Joined on: {{ user.created_on.strftime("%B %d, %Y")  }}</li>
+            </ul>
+            <P>
+            <h4>About Me</h4>    
+            </P>
+            <P>
+                {{user.bio}}
+            </P>
+            <center>
+            <ul style="list-style: none;">
+            <li><button id="bttn" type="submit">Send Message</button>&emsp;&emsp;<button id="bttn2" type="submit">Follow</button></li>
+            </ul>
+            </center>
+        </div>
+</div>
+</center>
+{% endblock %}

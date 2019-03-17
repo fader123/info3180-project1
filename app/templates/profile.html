@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block main %}
+     <h1>Add Profile</h1>
+     <hr>
+    <div>
+    <form action="{{url_for('profile')}}" method="POST" enctype="multipart/form-data" class = "addForm">
+     {{form.csrf_token}}
+     {{form.hidden_tag()}}
+     
+     <div class="form-group">
+      <div class="col-md-7">
+     <label for="First Name"><h5>{{ form.firstname.label }}</h5>
+    </label>
+    <br>
+     {{ form.firstname(class='form-control') }}
+    </div>
+    </div>
+    <br>
+    
+    
+     <div>
+      <div class="col-md-7">
+     <label for="Last Name"><h5>{{ form.lastname.label }}</h5>
+    
+    </label>
+    <br>
+     {{ form.lastname(class='form-control') }}
+    </div>
+    </div>
+    <br>
+    
+    
+    <div>
+    <div class="col-md-7">
+    <label for="Gender"><h5>{{ form.gender.label }}</h5>
+    </label>
+    <br>
+    {{ form.gender(class='form-control') }}
+    </div>
+    </div>
+    <br>
+    
+    <div>
+     <div class="col-md-7">
+    <label for="Mail"><h5>{{ form.email.label }}</h5>
+    </label>
+    <br>
+    {{ form.email(class='form-control',placeholder="e.g per@example.com") }}
+    </div>
+    </div>
+    <br>
+    
+     
+    <div>
+     <div class="col-md-7">
+    <label for="Location"><h5>{{ form.location.label }}</h5>
+    </label>
+    <br>
+    {{ form.location(class='form-control') }}
+    </div>
+    </div>
+    <br>
+    
+    
+    <div>
+    <div class="col-md-7">
+    <label for="Biography"><h5>{{ form.biography.label }}</h5>
+    </label>
+    <br>
+    {{ form.biography(cols="40", rows="5", class='form-control') }}
+    </div>
+    </div>
+    <br>
+    
+    <h5>{{form.photo.label(class="photoLabel")}}</h5>
+    &emsp;<label for="photo" type="file"></label>
+     {{form.photo(class='picButton')}}
+     
+     <br>
+    
+    
+    <button class = "btn-green" type="submit">Add Profile</button>
+    
+    
+    </form>
+    </div>
+{% endblock %}
